@@ -17,7 +17,7 @@ public class Client {
                     System.out.println(input.nextLine());
                 }
             } catch (Exception e) {
-                throw new RuntimeException(e);
+                System.out.println("Некорректный ввод");;
             }
         }).start();
 

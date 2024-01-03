@@ -14,7 +14,7 @@ public class Client1 {
         new Thread(() -> {
             try (Scanner input = new Scanner(client.getInputStream())) {
                 while (true) {
-                    System.out.println(input.nextLine());
+                    System.out.println(input.next());
                 }
             } catch (Exception e) {
                 throw new RuntimeException(e);

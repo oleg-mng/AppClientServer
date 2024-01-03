@@ -48,9 +48,18 @@ public class Server {
                             }
 
                             // формат сообщения: "цифра сообщение"
-                            long destinationId = Long.parseLong(clientInput.substring(0, 1));
-                            SocketWrapper destination = clients.get(destinationId);
-                            destination.getOutput().println(clientInput);
+                            if (clientInput.charAt(0) == '@') {
+                                long destinationId = Long.parseLong(clientInput.substring(1, 2));
+                                System.out.println("Destionation Id:" + destinationId);
+                                SocketWrapper destination = clients.get(destinationId);
+                                System.out.println(destination.toString());
+                                destination.getOutput().println(clientInput);
+                            }
+                            else {
+                                long destinationId = Long.parseLong(clientInput.substring(0, 1));
+                                SocketWrapper destination = clients.get(destinationId);
+                                destination.getOutput().println(clientInput);
+                            }
                         }
                     }
                 }).start();
