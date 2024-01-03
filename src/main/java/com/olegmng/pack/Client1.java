@@ -17,7 +17,7 @@ public class Client1 {
                     System.out.println(input.nextLine());
                 }
             } catch (Exception e) {
-                throw new RuntimeException(e);
+                System.out.println("Вы вышли из чата");
             }
         }).start();
 
@@ -34,7 +34,7 @@ public class Client1 {
                     }
                 }
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                System.out.println("Вы вышли из чата");
             }
         }).start();
 

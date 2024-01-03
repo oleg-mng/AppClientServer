@@ -17,7 +17,7 @@ public class Client {
                     System.out.println(input.nextLine());
                 }
             } catch (Exception e) {
-                System.out.println("Ошибка чтения Client");;
+                System.out.println("Вы вышли из чата");
             }
         }).start();
 
@@ -34,7 +34,7 @@ public class Client {
                     }
                 }
             } catch (IOException e) {
-                System.out.println("Ошибка записи Client");;
+                System.out.println("Вы вышли из чата");
             }
         }).start();
 
