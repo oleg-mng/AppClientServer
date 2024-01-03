@@ -6,7 +6,7 @@ import java.net.Socket;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class Client1 {
+public class Client2 {
 
     public static void main(String[] args) throws IOException {
         final Socket client = new Socket("localhost", Server.PORT);
@@ -40,5 +40,3 @@ public class Client1 {
 
     }
 }
-
-

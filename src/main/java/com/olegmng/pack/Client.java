@@ -17,7 +17,7 @@ public class Client {
                     System.out.println(input.nextLine());
                 }
             } catch (Exception e) {
-                System.out.println("Некорректный ввод");;
+                System.out.println("Ошибка чтения Client");;
             }
         }).start();
 
@@ -34,7 +34,7 @@ public class Client {
                     }
                 }
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                System.out.println("Ошибка записи Client");;
             }
         }).start();
 

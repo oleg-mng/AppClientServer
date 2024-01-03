@@ -40,8 +40,15 @@ public class Server {
 
                         while (true) {
                             String clientInput = input.nextLine();
+//                            for (Long aLong : clients.keySet()) {
+//                                if (aLong != clientId) {
+//                                    output.write("Message from Client " + clientId + " : " + clientInput);
+//                                }
+//
+//                            }
                             if (Objects.equals("q", clientInput)) {
                                 // todo разослать это сообщение всем остальным клиентам
+
                                 clients.remove(clientId);
                                 clients.values().forEach(it -> it.getOutput().println("Клиент[" + clientId + "] отключился"));
                                 break;
@@ -54,11 +61,22 @@ public class Server {
                                 SocketWrapper destination = clients.get(destinationId);
                                 System.out.println(destination.toString());
                                 destination.getOutput().println(clientInput);
-                            }
-                            else {
+//
+//                                PrintWriter printWriter = new PrintWriter();
+//                                Client.getOutputStream(destinationId);
+                            } else {
                                 long destinationId = Long.parseLong(clientInput.substring(0, 1));
-                                SocketWrapper destination = clients.get(destinationId);
-                                destination.getOutput().println(clientInput);
+                                for (Long aLong : clients.keySet()) {
+//
+                                    SocketWrapper destination = clients.get(aLong);
+                                    if (aLong != wrapper.getId()) {
+                                        destination.getOutput().println("Message to client: " + clientInput);
+                                    }
+
+                                }
+//                                    SocketWrapper destination = clients.get(destinationId);
+//                                    destination.getOutput().println(clientInput);
+
                             }
                         }
                     }
